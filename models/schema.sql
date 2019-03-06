@@ -1,3 +1,3 @@
-drop database if exists marketplacedb;
-create database marketplacedb;
+drop database if exists marketplace;
+create database marketplace;
 
