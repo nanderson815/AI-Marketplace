@@ -1,17 +1,19 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "root",
+    "database": "marketplace",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "root",
+    "database": "marketplace",
     "host": "localhost",
     "dialect": "mysql",
+    "port": 3306,
     "logging": false
   },
   "production": {
