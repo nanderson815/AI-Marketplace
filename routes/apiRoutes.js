@@ -12,8 +12,9 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/products", function(req, res) {
-    
-  
+    db.Product.create(req.body).then(function(dbProduct){
+      res.json(dbProduct);
+    });
   });
 
   // Delete an example by id
