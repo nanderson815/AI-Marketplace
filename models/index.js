@@ -9,6 +9,8 @@ var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 var sequelize;
 
+config.username = process.env.DB_USER;
+config.password = process.env.DB_PASS;
 
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable]);
