@@ -17,5 +17,13 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     });
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.Category, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Product;
 };

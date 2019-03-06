@@ -5,5 +5,12 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     });
+
+    Category.associate = function (models) {
+        Category.hasMany(models.Product, {
+            onDelete: "cascade"
+        });
+    };
+
     return Category;
 };
