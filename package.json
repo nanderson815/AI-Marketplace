@@ -16,5 +16,18 @@
     "express-handlebars": "^3.0.2",
     "mysql2": "^1.6.5",
     "sequelize": "^4.43.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanderson815/project2.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/nanderson815/project2/issues"
+  },
+  "homepage": "https://github.com/nanderson815/project2#readme"
 }
