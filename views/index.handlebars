@@ -2,7 +2,6 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
         <h2>This is our Home Page!</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
@@ -27,11 +26,12 @@
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
+        <h3>Products:</h3>
         <ul id="example-list" class="list-group">
-          {{#each examples}}
+          {{#each product}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
+            <a href="example/{{this.id}}">{{this.name}}</a>
+            <img src="{{this.image}}" width="200px" height="auto">
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}

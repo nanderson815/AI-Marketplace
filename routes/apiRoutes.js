@@ -28,6 +28,7 @@ module.exports = function (app) {
     });
   });
 
+  // Update a product by ID
   app.put("/api/products", function (req, res) {
     db.Product.update(
       req.body,
