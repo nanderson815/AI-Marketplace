@@ -12,7 +12,11 @@ module.exports = function (app) {
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
-
+    db.Product.findOne({where: {id: req.params.id}}).then(function(dpProducts){
+      res.render("addProduct", {
+        product: dpProducts
+      });
+    });
   });
 
   // Render 404 page for any unmatched routes
