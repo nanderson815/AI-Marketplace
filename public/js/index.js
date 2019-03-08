@@ -100,11 +100,7 @@ var handleDeleteBtnClick = function () {
     var EnteredPass = prompt("Please enter the listing password");
 
     if (EnteredPass === password) {
-      console.log(EnteredPass);
-      console.log(password);
-
-      var idToDelete = getProductbyId;
-      API.deleteExample(idToDelete).then(function () {
+      API.deleteExample(getProductbyId).then(function () {
         location.reload();
       });
     } else {
