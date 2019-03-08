@@ -1,7 +1,9 @@
 <h1>Add Your Product to the Marketplace!</h1>
 
 
-<h2>Add an Item Already!</h2>
+<h4>What Would You Like to Sell?</h4>
+
+
 <form class="create-form">
 
   <div class="form-group">
@@ -9,11 +11,40 @@
     <input type="text" id="item" name="name">
   </div>
 
+
+<h4>Please Add a Brief Description of Your Product.</h4>
+<form class="create-form">
   <div class="form-group">
-    <label for="newItem">Satisified With This Product?</label><br>
-    <input type="radio" name="newItem" value="1" checked> Upoload Already!<br>
-    <input type="radio" name="sleepy" value="0"> Do Not Upoload
+    <label for="item">Product Description:</label>
+    <input type="text" id="item" name="name">
   </div>
 
+<h4> Upload an Image of Your Product.</h4>
+<div class="form-group">
+<input type='file' name='image' />
+  </div>
+
+
+<h4>Please Input Your Information so Other Users Can Contact You.</h4>
+<label for="username">Username: </label>
+    <input type="text" id="username" name="username">
+  </div>
+
+<h4></h4>
+<label for="item">Phone Number:</label>
+    <input type="text" id="phone" name="phone">
+  </div>
+  <h4></h4>
+<label for="item">E-Mail Address:</label>
+    <input type="text" id="email" name="email">
+  </div>
+
+<h4></h4>
+    <label for="psw">Password:</label>
+  <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+   <h6> (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.)</h6>
+
+<h4>Send Product!</h4>
+  
   <button type="submit">Add Product</button>
 </form>
