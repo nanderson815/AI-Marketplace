@@ -1,18 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Product</h5>
-          {{!-- <p>
-            <strong>ID</strong>: {{product.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{produc.name}}</p>
-          <p>
-            <a href="/">← Back To Home</a> --}}
-        </div>
-      </div>
-    </div>
+<h1>Add Your Product to the Marketplace!</h1>
+
+
+<h2>Add an Item Already!</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="item">Product Name:</label>
+    <input type="text" id="item" name="name">
   </div>
-</div>
+
+  <div class="form-group">
+    <label for="newItem">Satisified With This Product?</label><br>
+    <input type="radio" name="newItem" value="1" checked> Upoload Already!<br>
+    <input type="radio" name="sleepy" value="0"> Do Not Upoload
+  </div>
+
+  <button type="submit">Add Product</button>
+</form>

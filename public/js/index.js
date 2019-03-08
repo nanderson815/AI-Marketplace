@@ -22,6 +22,12 @@ var API = {
       type: "GET"
     });
   },
+  getOneExample: function (id) {
+    return $.ajax({
+      url: "api/products/" + id,
+      type: "GET"
+    });
+  },
   deleteExample: function (id) {
     return $.ajax({
       url: "api/products/" + id,
@@ -88,14 +94,23 @@ var handleFormSubmit = function (event) {
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function () {
+  var getProductbyId = $(this).parent().attr("data-id");
+  API.getOneExample(getProductbyId).then(function (data) {
+    var password = data.password;
+    var EnteredPass = prompt("Please enter the listing password");
 
-  var password = prompt("Please enter the listing password");
-  if (password === $(this).parent().attr("data-password")) {
-    var idToDelete = $(this).parent().attr("data-id");
-    API.deleteExample(idToDelete).then(function () {
-      refreshExamples();
-    });
-  }
+    if (EnteredPass === password) {
+      console.log(EnteredPass);
+      console.log(password);
+
+      var idToDelete = getProductbyId;
+      API.deleteExample(idToDelete).then(function () {
+        location.reload();
+      });
+    }
+  });
+
+
 };
 
 
