@@ -107,6 +107,8 @@ var handleDeleteBtnClick = function () {
       API.deleteExample(idToDelete).then(function () {
         location.reload();
       });
+    } else {
+      alert("Incorrect. Please enter the password you used when creating this listing.");
     }
   });
 
