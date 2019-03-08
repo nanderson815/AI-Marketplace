@@ -2,11 +2,7 @@
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#description");
 var $submitBtn = $("#submit");
-<<<<<<< HEAD:public/js/index.js
 var $productList = $("#example-list");
-=======
-var $suggestionList = $("#suggestionList");
->>>>>>> master:public/assets/js/index.js
 
 // The API object contains methods for each kind of request we'll make
 var API = {
