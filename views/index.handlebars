@@ -142,6 +142,16 @@
             <span class="icon-fallback-text">Search</span>
           </button>
         </form>
+        <h3>Products:</h3>
+        <ul id="example-list" class="list-group">
+          {{#each product}}
+          <li data-id="{{this.id}}" data-password="{{this.password}}"class="list-group-item">
+            <a href="example/{{this.id}}">{{this.name}}</a>
+            <img src="{{this.image}}" width="200px" height="auto">
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
 
         <i class="popup-close material-icons">close</i>
       </div>

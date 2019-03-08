@@ -10,6 +10,17 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/api/products/:id", function (req, res) {
+    db.Product.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Category]
+    }).then(function (dbProduct) {
+      res.json(dbProduct);
+    });
+  });
+
   // Create a new product
   app.post("/api/products", function (req, res) {
     db.Product.create(req.body).then(function (dbProduct) {
