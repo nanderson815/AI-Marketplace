@@ -22,7 +22,7 @@ var API = {
       type: "GET"
     });
   },
-  getOneExample: function (id) {
+  getOneProduct: function (id) {
     return $.ajax({
       url: "api/products/" + id,
       type: "GET"
@@ -95,7 +95,7 @@ var handleFormSubmit = function (event) {
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function () {
   var getProductbyId = $(this).parent().attr("data-id");
-  API.getOneExample(getProductbyId).then(function (data) {
+  API.getOneProduct(getProductbyId).then(function (data) {
     var password = data.password;
     var EnteredPass = prompt("Please enter the listing password");
 
