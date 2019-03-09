@@ -27,15 +27,18 @@ var handleProductSubmit = function (event) {
     phone: $("#phone").val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  console.log(product);
 
-  API.saveProduct(example).then(function () {
-    location.reload();
-  });
+  // if (!(example.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
 
+  // API.saveProduct(product).then(function () {
+  //   location.reload();
+  // });
+
+  // Clear values
   $exampleText.val("");
   $exampleDescription.val("");
 };
@@ -45,4 +48,4 @@ var test = function (event) {
   console.log("test works");
 };
 
-$submitBtn.on("click", test);
+$submitBtn.on("click", handleProductSubmit);
