@@ -1,3 +1,6 @@
+var $submitBtn = $("#submit");
+
+
 var API = {
   saveProduct: function (product) {
     return $.ajax({
@@ -14,22 +17,31 @@ var API = {
 var handleProductSubmit = function (event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var product = {
+    name: $("#name").val().trim(),
+    description: $("#description").val().trim(),
+    image: $("#name").val().trim(),
+    password: $("#psw").val().trim(),
+    email: $("#email").val().trim(),
+    username: $("#username").val().trim(),
+    phone: $("#phone").val().trim()
   };
+
+  console.log(product);
 
   if (!(example.text && example.description)) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveProduct(example).then(function () {
+  API.saveProduct(product).then(function () {
     location.reload();
   });
 
+  // Clear values
   $exampleText.val("");
   $exampleDescription.val("");
 };
+
 
 $submitBtn.on("click", handleProductSubmit);

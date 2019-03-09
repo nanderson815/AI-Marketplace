@@ -1,50 +1,61 @@
-<h1>Add Your Product to the Marketplace!</h1>
+<div class=" container ">
+  <div class="card">
+    <div class="card-content">
+
+      <h1>Add Your Product to the Marketplace!</h1>
+
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="item">Product Name:</label>
+          <input type="text" id="name" name="name">
+        </div>
 
 
-<h4>What Would You Like to Sell?</h4>
+        <div class="form-group">
+          <label for="item">Product Description:</label>
+          <input type="text" id="description" name="description">
+        </div>
+
+        <div class="form-group">
+          <label for="item">Product Image:</label>
+          <br>
+          <input type='file' name='image' />
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="psw">Password:</label>
+          <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+          <p>The password will be used if you ever want to delete or edit your listing. (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
+            characters.)
+          </p>
+        </div>
+
+        <br>
+
+        <h1>Please Input Your Information so Other Users Can Contact You.</h1>
+        <div class="form-group">
+          <label for="username">Your Name: </label>
+          <input type="text" id="username" name="username">
+        </div>
 
 
-<form class="create-form">
+        <div class="form-group">
+          <label for="item">Phone Number:</label>
+          <input type="text" id="phone" name="phone">
+        </div>
 
-  <div class="form-group">
-    <label for="item">Product Name:</label>
-    <input type="text" id="item" name="name">
+
+        <div class="form-group">
+          <label for="item">E-Mail Address:</label>
+          <input type="text" id="email" name="email">
+        </div>
+
+        <br>
+        <button id="submit" type="submit">Add Product</button>
+      </form>
+    </div>
   </div>
 
-
-<h4>Please Add a Brief Description of Your Product.</h4>
-<form class="create-form">
-  <div class="form-group">
-    <label for="item">Product Description:</label>
-    <input type="text" id="item" name="name">
-  </div>
-
-<h4> Upload an Image of Your Product.</h4>
-<div class="form-group">
-<input type='file' name='image' />
-  </div>
-
-
-<h4>Please Input Your Information so Other Users Can Contact You.</h4>
-<label for="username">Username: </label>
-    <input type="text" id="username" name="username">
-  </div>
-
-<h4></h4>
-<label for="item">Phone Number:</label>
-    <input type="text" id="phone" name="phone">
-  </div>
-  <h4></h4>
-<label for="item">E-Mail Address:</label>
-    <input type="text" id="email" name="email">
-  </div>
-
-<h4></h4>
-    <label for="psw">Password:</label>
-  <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-   <h6> (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.)</h6>
-
-<h4>Send Product!</h4>
-  
-  <button type="submit">Add Product</button>
-</form>
+</div>
