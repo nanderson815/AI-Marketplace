@@ -24,8 +24,8 @@
     padding:20px 0px 20px 0px;
 }
 
-#dropdown1 {
-    color:green;
+#dropdown1 li a{
+    color:#608a42;
 }
 
 .popularCategories {
@@ -34,4 +34,20 @@
 
 .marginLeft10 {
     margin-left:10px;
+}
+
+.btn {
+    background-color:#75a951;
+}
+
+.btn:hover {
+    background-color: #608a42;
+}
+
+.btn:focus {
+    background-color: #608a42;
+}
+
+.card-content h5 {
+    margin-bottom:30px;
 }
