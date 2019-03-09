@@ -52,18 +52,18 @@ module.exports = function (app) {
     });
   });
 
-    // Get all by category
-    app.get("/api/categories", function (req, res) {
-      db.Product.findAll(
-        req.body,
-        {
-          where: {
-            category: req.body.category
-          }
-        }).then(function (dbProduct) {
-        res.json(dbProduct);
-      });
+  // Get all by category
+  app.get("/api/categories", function (req, res) {
+    db.Product.findAll(
+      req.body,
+      {
+        where: {
+          category: req.body.category
+        }
+      }).then(function (dbProduct) {
+      res.json(dbProduct);
     });
+  });
 
 };
 
