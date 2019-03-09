@@ -2,3 +2,36 @@
     display:flex;
     justify-content:center;
 }
+
+.categories {
+    margin-top:20px;
+}
+
+.categories li {
+    display:inline-block;
+}
+
+.categories li a {
+    color:white;
+}
+
+.categories li:not(:first-of-type){
+    margin-left:20px;
+}
+
+.borderBottomGray {
+    border-bottom:1px solid #d9d9d9;
+    padding:20px 0px 20px 0px;
+}
+
+#dropdown1 {
+    color:green;
+}
+
+.popularCategories {
+    margin-top:20px;
+}
+
+.marginLeft10 {
+    margin-left:10px;
+}
