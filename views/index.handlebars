@@ -39,20 +39,20 @@
       </div>
     </div>
 
-
+  {{#each product}}
     <div class="gallery gallery-masonry row">
       <div class="col s12 m4 gallery-item gallery-expand gallery-filter gallery-fillscreen" data-type="" data-section-type="product" data-tag="fillscreen">
         <div class="gallery-curve-wrapper">
           <a class="gallery-cover gray">
-            <img src="https://images.zgallerie.com/is/image/ZGallerie/hero/vincente-coffee-table-set-of-2-011601817.jpg" alt="Workspace"
-              crossorigin="anonymous" data-product-featured-image />
+            <img src="{{this.image}}" alt="{{this.name}}"
+              crossorigin="anonymous" data-product-featured-image="" />
           </a>
 
           <div class="gallery-header">
-            <span class="title">Workspace</span>
+            <span class="title">{{this.name}}</span>
             <div class="product-ratings-price">
-              <span class="price" data-product-price>
-                $1120.00
+              <span class="price" data-product-price="">
+                {{this.price}}
               </span>
             </div>
           </div>
@@ -63,6 +63,7 @@
 
       </div>
     </div>
+    {{/each}}
 </main>
 
 
