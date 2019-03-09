@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         price: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL(13,2),
             allowNull: false
         },
         password: {
