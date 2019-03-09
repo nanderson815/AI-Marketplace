@@ -15,32 +15,31 @@ var API = {
 };
 
 var handleProductSubmit = function (event) {
-  event.preventDefault();
 
-  var product = {
-    name: $("#name").val().trim(),
-    description: $("#description").val().trim(),
-    image: $("#name").val().trim(),
-    password: $("#psw").val().trim(),
-    email: $("#email").val().trim(),
-    username: $("#username").val().trim(),
-    phone: $("#phone").val().trim()
-  };
+  var form = $("#productForm")[0];
+  if (form.checkValidity()) {
+    event.preventDefault();
 
-  console.log(product);
+    var product = {
+      name: $("#name").val().trim(),
+      description: $("#description").val().trim(),
+      image: $("#image").val().trim(),
+      password: $("#psw").val().trim(),
+      email: $("#email").val().trim(),
+      username: $("#username").val().trim(),
+      phone: $("#phone").val().trim()
+    };
+    console.log(product);
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
+    API.saveProduct(product).then(function () {
+      location.reload();
+    });
+
+    // Clear values
+
+  } else {
+    alert("Please complete the form!");
   }
-
-  API.saveProduct(product).then(function () {
-    location.reload();
-  });
-
-  // Clear values
-  $exampleText.val("");
-  $exampleDescription.val("");
 };
 
 

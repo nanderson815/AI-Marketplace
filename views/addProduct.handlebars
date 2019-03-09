@@ -4,28 +4,28 @@
 
       <h1>Add Your Product to the Marketplace!</h1>
 
-      <form class="create-form">
+      <form id="productForm" class="create-form">
 
         <div class="form-group">
           <label for="item">Product Name:</label>
-          <input type="text" id="name" name="name">
+          <input type="text" id="name" name="name" class="validate" required="" aria-required="true">
         </div>
 
 
         <div class="form-group">
           <label for="item">Product Description:</label>
-          <input type="text" id="description" name="description">
+          <input type="text" id="description" name="description" class="validate" required="" aria-required="true">
         </div>
 
         <div class="form-group">
-          <label for="item">Product Image:</label>
+          <label for="item">Product Image URL:</label>
           <br>
-          <input type='file' name='image' />
+          <input type='url' name='image' />
         </div>
-        <br>
+
         <div class="form-group">
           <label for="psw">Password:</label>
-          <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          <input class="validate" required="" aria-required="true" type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
           <p>The password will be used if you ever want to delete or edit your listing. (Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
             characters.)
@@ -37,19 +37,19 @@
         <h1>Please Input Your Information so Other Users Can Contact You.</h1>
         <div class="form-group">
           <label for="username">Your Name: </label>
-          <input type="text" id="username" name="username">
+          <input type="text" id="username" name="username" class="validate" required="" aria-required="true">
         </div>
 
 
         <div class="form-group">
           <label for="item">Phone Number:</label>
-          <input type="text" id="phone" name="phone">
+          <input type="text" id="phone" name="phone" class="validate" required="" aria-required="true">
         </div>
 
 
         <div class="form-group">
           <label for="item">E-Mail Address:</label>
-          <input type="text" id="email" name="email">
+          <input type="text" id="email" name="email" class="validate" required="" aria-required="true">
         </div>
 
         <br>
