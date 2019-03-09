@@ -2,54 +2,296 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#7db557">
-  <link rel="canonical" href="https://materialize-shopify-themes.myshopify.com/collections/fillscreen-style">
-  
-  <title>
-    MarketPlace    
-  </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#7db557">
+    <link rel="canonical" href="https://materialize-shopify-themes.myshopify.com/collections/fillscreen-style">
 
-<meta property="og:site_name" content="Materialize Shopify Themes">
-<meta property="og:url" content="https://materialize-shopify-themes.myshopify.com/collections/fillscreen-style">
-<meta property="og:title" content="Fillscreen Style">
-<meta property="og:type" content="website">
-<meta property="og:description" content="Materialize Shopify Themes">
+    <title>
+        MarketPlace
+    </title>
 
-
-<meta name="twitter:site" content="@materializecss">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fillscreen Style">
-<meta name="twitter:description" content="Materialize Shopify Themes">
+    <meta property="og:site_name" content="Materialize Shopify Themes">
+    <meta property="og:url" content="https://materialize-shopify-themes.myshopify.com/collections/fillscreen-style">
+    <meta property="og:title" content="Fillscreen Style">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Materialize Shopify Themes">
 
 
-  
-  <link href="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/gallery-materialize.min.css?12888061890507140117" rel="stylesheet" type="text/css" media="all" />
-  
-  <link href="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.scss.css?12888061890507140117" rel="stylesheet" type="text/css" media="all" />
+    <meta name="twitter:site" content="@materializecss">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fillscreen Style">
+    <meta name="twitter:description" content="Materialize Shopify Themes">
 
-  <!-- Lato Font -->
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/gallery-materialize.min.css?12888061890507140117"
+        rel="stylesheet" type="text/css" media="all" />
+
+    <link href="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.scss.css?12888061890507140117" rel="stylesheet"
+        type="text/css" media="all" />
+
+    <!-- Lato Font -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 <body>
 
 
-  {{{body}}}
+    {{{body}}}
 
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- Materialized Javascript CDN -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {{!-- <script type="text/javascript" src="/styles.styles.css"></script> --}}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialized Javascript CDN -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {{!-- <script type="text/javascript" src="/styles.styles.css"></script> --}}
 
-  <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+    <!-- Javascript -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script
+        src="//cdn.shopify.com/s/assets/themes_support/option_selection-fe6b72c2bbdd3369ac0bfefe8648e3c889efca213baefd4cfb0dd9363563831f.js"
+        type="text/javascript"></script>
+
+    <script
+        src="//cdn.shopify.com/s/assets/themes_support/api.jquery-e94e010e92e659b566dbc436fdfe5242764380e00398907a14955ba301a4749f.js"
+        type="text/javascript"></script>
+
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/vendor.js?12888061890507140117"
+        defer="defer"></script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/vendor.js?12888061890507140117"></script><![endif]-->
+
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?12888061890507140117" defer="defer"></script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]><script src="//cdn.shopify.com/s/files/1/2030/2737/t/6/assets/theme.js?12888061890507140117"></script><![endif]-->
+
+
+    <style>
+        .gallery .gallery-item:nth-child(n + 7) {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var pagination_limit = 6;
+            console.log("PAGE LIMIT", pagination_limit);
+            var $all_products = $('.gallery .gallery-item');
+            var $current_products = $all_products;
+            var page_max = Math.floor($current_products.length / pagination_limit) + 1;
+            var page_number = getUrlParameter('page') || 1;
+            var $shown_products = getPaginated($current_products, page_number, pagination_limit);
+            var $masonry = $('.gallery');
+            $masonry.find('.gallery-item:nth-child(n +' + ($shown_products.length + 1) + ')').remove();
+            renderPagination($('.gallery'));
+
+            // Get Url parameter
+            function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            }
+
+            // Slice products with respect to pagination
+            function getPaginated(products, page, limit) {
+                var start = (page - 1) * limit;
+                var end = page * limit;
+                return products.slice(start, end);
+            }
+
+            // Render pagination elements
+            function renderPagination(gallery) {
+                page_max = Math.floor($current_products.length / pagination_limit) + 1;
+                var $pagination = $('<ul class="pagination"></ul>');
+                var left = $('<li data-paginate="left"><a><i class="material-icons">chevron_left</i></a></li>');
+                var right = $('<li data-paginate="right"><a><i class="material-icons">chevron_right</i></a></li>');
+
+                // Add .container if dark_theme
+                if (false) {
+                    $pagination.addClass('container');
+                }
+
+                // If only 1 page, don't render
+                if (page_max === 1) {
+                    gallery.next('ul.pagination').remove();
+                    return;
+                }
+
+                if (page_number === 1) {
+                    left.addClass('disabled');
+                } else if (page_number === page_max) {
+                    right.addClass('disabled');
+                }
+
+                $pagination.append(left);
+                for (var i = 0; i < page_max; i++) {
+                    var curr_page_number = i + 1;
+                    var $page = $('<li data-paginate="' + curr_page_number + '"><a>' + curr_page_number + '</a></li>');
+                    if (curr_page_number === page_number) {
+                        $page.addClass('active');
+                    } else {
+                        $page.addClass('waves-effect');
+                    }
+                    $pagination.append($page);
+                }
+                $pagination.append(right);
+
+                if (gallery.next('ul.pagination').length) {
+                    gallery.next('ul.pagination').replaceWith($pagination);
+                } else {
+                    gallery.after($pagination);
+                }
+
+                $pagination.find('li:not(.disabled):not(.active)').on('click', function () {
+                    var data_paginate = $(this).attr('data-paginate');
+                    if (data_paginate === 'left') {
+                        changePage(page_number - 1);
+                    } else if (data_paginate === 'right') {
+                        changePage(page_number + 1);
+                    } else {
+                        changePage(parseInt(data_paginate));
+                    }
+                });
+            }
+
+            // Render products, reinit galleryExpand, render pagination
+            var renderProducts = function (gallery, added, removed) {
+                gallery
+                    .masonry('remove', removed)
+                    .masonry('layout');
+
+                gallery
+                    .append(added)
+                    .masonry('appended', added)
+                    .masonry('layout');
+
+                gallery.find('.gallery-expand').galleryExpand({
+                    onShow: Window.GalleryExpandOnShow,
+                    dynamicRouting: true
+                });
+
+
+                // Reinit SPR
+                if (SPR) {
+                    SPR.initDomEls();
+                    SPR.loadBadges();
+                }
+
+                renderPagination(gallery);
+            };
+
+            // Change page and handle masonry
+            var changePage = function (page) {
+                page_number = page;
+                $shown_products = getPaginated($current_products, page, pagination_limit);
+
+                renderProducts($masonry, $shown_products, $masonry.find('.gallery-item'));
+            };
+
+            var categories = $('nav .categories-container');
+            if (categories.length) {
+                function filterProducts(link) {
+                    console.log("FILTER PRODUCTS", link.parent('.categories').attr('data-filter'));
+
+                    var type_selector = '.gallery-item';
+
+                    // Change active of button if not variant (select fields)
+                    if (link.parent('.categories').attr('data-filter') !== 'variant') {
+                        link.parent().find('li').removeClass('active');
+                        link.addClass('active');
+                    }
+
+                    categories.find('.categories').each(function () {
+                        // Generate type selector for variants (select fields)
+                        if ($(this).attr('data-filter') === 'variant') {
+                            var selects = $(this).find('select');
+                            selects.each(function () {
+                                var val = $(this).val();
+                                if (val !== 'all') {
+                                    var filter_type = $(this).attr('name');
+                                    type_selector += '[data-' + filter_type + '="' + val + '"]';
+                                }
+                            });
+
+                            // Generate type selector for everything else (hash based)
+                        } else {
+
+                            console.log("FIND HASH", $(this));
+                            var hash = $(this).find('li.active > a').first()[0].hash.substr(1);
+                            if (hash !== 'all') {
+                                var filter_type = $(this).attr('data-filter');
+                                type_selector += '[data-' + filter_type + '="' + hash + '"]';
+                            }
+                        }
+                    });
+
+                    console.log("FILTER", type_selector);
+
+                    page_number = 1;
+                    var $removed_products = $remaining_products = $added_products = $();
+
+                    $removed_products = $shown_products.not(type_selector);
+                    $remaining_products = $shown_products.filter(type_selector);
+                    $current_products = $all_products.filter(type_selector);
+                    $shown_products = getPaginated($current_products, page_number, pagination_limit);
+                    $added_products = $shown_products.not($remaining_products);
+                    $removed_products = $removed_products.add($remaining_products.not($shown_products));
+
+                    console.log($removed_products, $remaining_products, $shown_products, $added_products);
+
+                    renderProducts($masonry, $added_products, $removed_products);
+                }
+
+                // Add select onchange handler for variant filters
+                if (categories.find('.categories[data-filter="variant"]')) {
+                    $(document).on('change', '.categories-container .categories select', function (e) {
+                        console.log("CHANGE", $(e.target));
+                        filterProducts($(e.target).closest('li'));
+                    });
+                }
+
+                // Add click handler for other filters
+                var $links = categories.find('li');
+                $links.each(function () {
+                    var $link = $(this);
+                    $link.on('click', function () { filterProducts($link); });
+                });
+            }
+
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            var categories = $('nav .categories-container');
+            if (categories.length) {
+                categories.pushpin({ top: categories.offset().top });
+            }
+        });
+    </script>
+
+
+
 </body>
 
 </html>
