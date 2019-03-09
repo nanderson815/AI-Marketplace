@@ -29,23 +29,19 @@ var handleProductSubmit = function (event) {
 
   console.log(product);
 
-  // if (!(example.text && example.description)) {
-  //   alert("You must enter an example text and description!");
-  //   return;
-  // }
+  if (!(example.text && example.description)) {
+    alert("You must enter an example text and description!");
+    return;
+  }
 
-  // API.saveProduct(product).then(function () {
-  //   location.reload();
-  // });
+  API.saveProduct(product).then(function () {
+    location.reload();
+  });
 
   // Clear values
   $exampleText.val("");
   $exampleDescription.val("");
 };
 
-var test = function (event) {
-  event.preventDefault();
-  console.log("test works");
-};
 
 $submitBtn.on("click", handleProductSubmit);
