@@ -1,3 +1,6 @@
+var $submitBtn = $("#submit");
+
+
 var API = {
   saveProduct: function (product) {
     return $.ajax({
@@ -14,9 +17,14 @@ var API = {
 var handleProductSubmit = function (event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var product = {
+    name: $("#name").val().trim(),
+    description: $("#description").val().trim(),
+    image: $("#name").val().trim(),
+    password: $("#psw").val().trim(),
+    email: $("#email").val().trim(),
+    username: $("#username").val().trim(),
+    phone: $("#phone").val().trim()
   };
 
   if (!(example.text && example.description)) {
@@ -32,4 +40,9 @@ var handleProductSubmit = function (event) {
   $exampleDescription.val("");
 };
 
-$submitBtn.on("click", handleProductSubmit);
+var test = function (event) {
+  event.preventDefault();
+  console.log("test works");
+};
+
+$submitBtn.on("click", test);
