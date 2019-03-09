@@ -1,0 +1,157 @@
+<div id="shopify-section-header" class="shopify-section">
+
+    <!-- Navbar and Header -->
+
+    <nav class="nav-extended">
+
+
+        <div class="nav-background">
+            <div class="pattern active"
+                style="background-image: url('//cdn.shopify.com/s/files/1/2030/2737/files/icon-seamless_ef568d79-394b-49ab-a3c5-128827d788e8.png?v=1496294246');">
+            </div>
+        </div>
+
+
+        <div class="nav-wrapper container">
+            <a href="/" itemprop="url" class="brand-logo site-logo">
+                MarketPlace
+            </a>
+
+
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+
+
+
+                <li>
+                    <a href="/" class="site-nav__link">Home</a>
+                </li>
+
+                <li>
+                    <a href="/" class="site-nav__link">New Product</a>
+                </li>
+
+
+
+
+
+
+                <!-- Show Carousel instead of default page titles -->
+
+
+
+        </div>
+    </nav>
+    <ul class="side-nav" id="nav-mobile">
+
+
+
+        <li> <a href="/account/login" id="customer_login_link">Log in</a> </li>
+        <li> <a href="/account/register" id="customer_register_link">Create account</a> </li>
+
+
+
+
+
+        <li>
+            <a href="/" class="site-nav__link">Home</a>
+        </li>
+
+
+
+        <li class="site-nav--has-submenu">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header">Features<i class="material-icons right">arrow_drop_down</i></div>
+                    <div class="collapsible-body no-padding">
+                        <ul>
+
+                            <li>
+                                <a href="/pages/dark-theme" class="site-nav__link">Dark Theme</a>
+                            </li>
+
+                            <li>
+                                <a href="/collections/dark-theme" class="site-nav__link">Dark Collection</a>
+                            </li>
+
+                            <li class="site-nav--active">
+                                <a href="/collections/fillscreen-style" class="site-nav__link">Fillscreen</a>
+                            </li>
+
+                            <li>
+                                <a href="/collections/horizontal" class="site-nav__link">Horizontal</a>
+                            </li>
+
+                            <li>
+                                <a href="/collections/all-products" class="site-nav__link">No Header</a>
+                            </li>
+
+                            <li>
+                                <a href="/pages/contact-us" class="site-nav__link">Contact Us</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li>
+            <a href="/blogs/news" class="site-nav__link">Blog</a>
+        </li>
+
+
+
+        <li>
+            <a href="/cart">
+                Cart
+
+            </a>
+        </li>
+
+        <li>
+            <a class="fullscreen-search" href="#">
+                Search
+            </a>
+        </li>
+    </ul>
+
+    <div data-section-id="header" data-section-type="header-section">
+        <header role="banner">
+
+            <div class="popup-search-wrapper">
+                <form action="/search" method="get" role="search">
+                    <label for="Search" class="label-hidden">
+                        Search our store
+                    </label>
+                    <input type="search" name="q" id="Search" value="" placeholder="Search our store">
+                    <button type="submit" class="btn-flat btn-floating waves-effect">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
+                            viewBox="0 0 20 20">
+                            <path fill="#444"
+                                d="M18.64 17.02l-5.31-5.31c.81-1.08 1.26-2.43 1.26-3.87C14.5 4.06 11.44 1 7.75 1S1 4.06 1 7.75s3.06 6.75 6.75 6.75c1.44 0 2.79-.45 3.87-1.26l5.31 5.31c.45.45 1.26.54 1.71.09.45-.36.45-1.17 0-1.62zM3.25 7.75c0-2.52 1.98-4.5 4.5-4.5s4.5 1.98 4.5 4.5-1.98 4.5-4.5 4.5-4.5-1.98-4.5-4.5z" />
+                        </svg>
+                        <span class="icon-fallback-text">Search</span>
+                    </button>
+                </form>
+                <h3>Products:</h3>
+                <ul id="example-list" class="list-group">
+                    {{#each product}}
+                    <li data-id="{{this.id}}" data-password="{{this.password}}" class="list-group-item">
+                        <a href="example/{{this.id}}">{{this.name}}</a>
+                        <img src="{{this.image}}" width="200px" height="auto">
+                        <button class="btn btn-danger float-right delete">ｘ</button>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                <i class="popup-close material-icons">close</i>
+            </div>
+
+        </header>
+    </div>
+
+
+</div>
