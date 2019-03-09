@@ -12,6 +12,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        price: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false
