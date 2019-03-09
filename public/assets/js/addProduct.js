@@ -21,21 +21,21 @@ var handleProductSubmit = function (event) {
     event.preventDefault();
 
     var product = {
-      name: $("#name").val().trim(),
-      description: $("#description").val().trim(),
-      image: $("#image").val().trim(),
-      password: $("#psw").val().trim(),
-      email: $("#email").val().trim(),
-      username: $("#username").val().trim(),
-      phone: $("#phone").val().trim()
+      "name": $("#name").val().trim(),
+      "description": $("#description").val().trim(),
+      "image": $("#image").val().trim(),
+      "password": $("#psw").val().trim(),
+      "email": $("#email").val().trim(),
+      "userName": $("#username").val().trim(),
+      "phone": $("#phone").val().trim()
     };
-    console.log(product);
 
     API.saveProduct(product).then(function () {
       location.reload();
     });
 
     // Clear values
+    $("#productForm")[0].reset();
 
   } else {
     alert("Please complete the form!");
