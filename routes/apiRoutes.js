@@ -1,4 +1,5 @@
 var db = require("../models");
+var VisualRecognitionV3 = require("watson-developer-cloud/visual-recognition/v3");
 
 module.exports = function (app) {
   // Get all Products
@@ -49,6 +50,32 @@ module.exports = function (app) {
         }
       }).then(function (dbProduct) {
       res.json(dbProduct);
+    });
+  });
+
+  // Get watson response
+  app.get("/api/watson", function (req, res) {
+
+    var visualRecognition = new VisualRecognitionV3({
+      version: "2018-03-19",
+      // eslint-disable-next-line camelcase
+      iam_apikey: process.env.WATSON_KEY
+    });
+
+    var url = req.query.URL;
+
+    var params = {
+      url: url,
+    };
+
+    console.log(req.query.URL);
+    visualRecognition.classify(params, function (err, response) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(JSON.stringify(response, null, 2));
+        res.json(response);
+      }
     });
   });
 

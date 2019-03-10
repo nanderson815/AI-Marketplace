@@ -11,6 +11,16 @@ var API = {
       url: "api/products",
       data: JSON.stringify(product)
     });
+  },
+  getWatson: function(url){
+    console.log(url);
+    return $.ajax({
+      type: "GET",
+      url: "api/watson",
+      data: {
+        URL: url
+      }
+    });
   }
 };
 
@@ -42,5 +52,6 @@ var handleProductSubmit = function (event) {
   }
 };
 
-
 $submitBtn.on("click", handleProductSubmit);
+
+API.getWatson("https://watson-developer-cloud.github.io/doc-tutorial-downloads/visual-recognition/640px-IBM_VGA_90X8941_on_PS55.jpg");
