@@ -71,7 +71,7 @@ function handleProductSubmit(event) {
     // } else {
     //   alert("Please complete the form!");
   }
-};
+}
 
 
 var createChips = function (classes) {
