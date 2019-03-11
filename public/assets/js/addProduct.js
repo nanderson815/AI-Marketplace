@@ -1,6 +1,34 @@
 var $submitBtn = $("#submit");
 var $imgBtn = $("#addImage");
 
+$(".chips").chips();
+$(".chips-initial").chips({
+  data: [{
+    tag: "Apple",
+  }, {
+    tag: "Microsoft",
+  }, {
+    tag: "Google",
+  }],
+});
+$(".chips-placeholder").chips({
+  placeholder: "Enter a tag",
+  secondaryPlaceholder: "+Tag",
+});
+$(".chips-autocomplete").chips({
+  autocompleteOptions: {
+    data: {
+      "Technology": null,
+      "Sports": null,
+      "Cars": null,
+      "Leisure": null,
+      "Fashion": null
+    },
+    limit: Infinity,
+    minLength: 1
+  }
+});
+
 
 var API = {
   saveProduct: function (product) {
@@ -57,10 +85,11 @@ var handleProductSubmit = function (event) {
 var handleImageCats = function (event) {
   var Imgurl = $("#image").val().trim();
 
-  if(Imgurl){
+  if (Imgurl) {
     event.preventDefault();
     API.getWatson(Imgurl).then(function (data) {
       console.log(data);
+      $("#name").val(data.images[0].classifiers[0].classes[0].class);
     });
   }
 
