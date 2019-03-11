@@ -12,7 +12,7 @@ var API = {
       data: JSON.stringify(product)
     });
   },
-  getWatson: function(url){
+  getWatson: function (url) {
     console.log(url);
     return $.ajax({
       type: "GET",
@@ -37,7 +37,8 @@ var handleProductSubmit = function (event) {
       "password": $("#psw").val().trim(),
       "email": $("#email").val().trim(),
       "userName": $("#username").val().trim(),
-      "phone": $("#phone").val().trim()
+      "phone": $("#phone").val().trim(),
+      "price": $("#price").val().trim()
     };
 
     API.saveProduct(product).then(function () {
@@ -54,4 +55,6 @@ var handleProductSubmit = function (event) {
 
 $submitBtn.on("click", handleProductSubmit);
 
-API.getWatson("https://watson-developer-cloud.github.io/doc-tutorial-downloads/visual-recognition/640px-IBM_VGA_90X8941_on_PS55.jpg");
+API.getWatson("https://watson-developer-cloud.github.io/doc-tutorial-downloads/visual-recognition/640px-IBM_VGA_90X8941_on_PS55.jpg").then(function (data) {
+  console.log(data);
+});
