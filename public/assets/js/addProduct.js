@@ -2,19 +2,6 @@ var $submitBtn = $("#submit");
 var $imgBtn = $("#addImage");
 
 $(".chips").chips();
-$(".chips-initial").chips({
-  data: [{
-    tag: "Apple",
-  }, {
-    tag: "Microsoft",
-  }, {
-    tag: "Google",
-  }],
-});
-$(".chips-placeholder").chips({
-  placeholder: "Enter a tag",
-  secondaryPlaceholder: "+Tag",
-});
 $(".chips-autocomplete").chips({
   autocompleteOptions: {
     data: {
@@ -82,14 +69,28 @@ var handleProductSubmit = function (event) {
   }
 };
 
+
+var createChips = function (classes) {
+  var chips = $(".chips");
+  for (tag in classes) {
+    var chip = $("<div class='chip'>" + classes[tag].class +"<i class= 'close material-icons'>close</i></div>");
+    chips.prepend(chip);
+  }
+};
+
 var handleImageCats = function (event) {
   var Imgurl = $("#image").val().trim();
 
   if (Imgurl) {
     event.preventDefault();
+
     API.getWatson(Imgurl).then(function (data) {
-      console.log(data);
-      $("#name").val(data.images[0].classifiers[0].classes[0].class);
+      var classes = data.images[0].classifiers[0].classes;
+      console.log(classes);
+
+      $("#name").val(classes[0].class);
+      createChips(classes);
+
     });
   }
 
@@ -97,4 +98,6 @@ var handleImageCats = function (event) {
 
 $submitBtn.on("click", handleProductSubmit);
 $imgBtn.on("click", handleImageCats);
+
+
 
