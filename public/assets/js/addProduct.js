@@ -62,7 +62,7 @@ function handleProductSubmit(event) {
     };
 
     API.saveProduct(product).then(function () {
-      // location.reload();
+      location.reload();
     });
 
     // Clear values
