@@ -1,4 +1,5 @@
 var $submitBtn = $("#submit");
+var $imgBtn = $("#addImage");
 
 
 var API = {
@@ -42,7 +43,7 @@ var handleProductSubmit = function (event) {
     };
 
     API.saveProduct(product).then(function () {
-      location.reload();
+      // location.reload();
     });
 
     // Clear values
@@ -53,8 +54,18 @@ var handleProductSubmit = function (event) {
   }
 };
 
-$submitBtn.on("click", handleProductSubmit);
+var handleImageCats = function (event) {
+  var Imgurl = $("#image").val().trim();
 
-API.getWatson("https://watson-developer-cloud.github.io/doc-tutorial-downloads/visual-recognition/640px-IBM_VGA_90X8941_on_PS55.jpg").then(function (data) {
-  console.log(data);
-});
+  if(Imgurl){
+    event.preventDefault();
+    API.getWatson(Imgurl).then(function (data) {
+      console.log(data);
+    });
+  }
+
+};
+
+$submitBtn.on("click", handleProductSubmit);
+$imgBtn.on("click", handleImageCats);
+
