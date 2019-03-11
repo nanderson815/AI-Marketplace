@@ -30,6 +30,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         phone: {
             type: DataTypes.STRING
+        },
+        classes: {
+            type: DataTypes.STRING
         }
     });
 

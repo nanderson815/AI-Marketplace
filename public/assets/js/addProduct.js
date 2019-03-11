@@ -1,5 +1,7 @@
 var $submitBtn = $("#submit");
 var $imgBtn = $("#addImage");
+var imageClasses = [];
+
 
 $(".chips").chips();
 $(".chips-autocomplete").chips({
@@ -40,8 +42,9 @@ var API = {
   }
 };
 
-var handleProductSubmit = function (event) {
-
+function handleProductSubmit(event) {
+  var SavedTags = event.data.toString();
+  console.log(SavedTags);
   var form = $("#productForm")[0];
   if (form.checkValidity()) {
     event.preventDefault();
@@ -54,7 +57,8 @@ var handleProductSubmit = function (event) {
       "email": $("#email").val().trim(),
       "userName": $("#username").val().trim(),
       "phone": $("#phone").val().trim(),
-      "price": $("#price").val().trim()
+      "price": $("#price").val().trim(),
+      "classes": SavedTags
     };
 
     API.saveProduct(product).then(function () {
@@ -64,8 +68,8 @@ var handleProductSubmit = function (event) {
     // Clear values
     $("#productForm")[0].reset();
 
-  } else {
-    alert("Please complete the form!");
+    // } else {
+    //   alert("Please complete the form!");
   }
 };
 
@@ -73,7 +77,8 @@ var handleProductSubmit = function (event) {
 var createChips = function (classes) {
   var chips = $(".chips");
   for (tag in classes) {
-    var chip = $("<div class='chip'>" + classes[tag].class +"<i class= 'close material-icons'>close</i></div>");
+    imageClasses.push(classes[tag].class);
+    var chip = $("<div class='chip'>" + classes[tag].class + "<i class= 'close material-icons'>close</i></div>");
     chips.prepend(chip);
   }
 };
@@ -96,7 +101,7 @@ var handleImageCats = function (event) {
 
 };
 
-$submitBtn.on("click", handleProductSubmit);
+$submitBtn.on("click", imageClasses, handleProductSubmit);
 $imgBtn.on("click", handleImageCats);
 
 
