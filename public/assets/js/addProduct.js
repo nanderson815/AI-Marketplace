@@ -23,6 +23,7 @@ var handleProductSubmit = function (event) {
     var product = {
       "name": $("#name").val().trim(),
       "description": $("#description").val().trim(),
+      "price": $("#price").val().trim(),
       "image": $("#image").val().trim(),
       "password": $("#psw").val().trim(),
       "email": $("#email").val().trim(),
