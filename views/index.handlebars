@@ -14,7 +14,8 @@
     <div class="row borderBottomGray">
       <div class="col m12">
         <!-- Dropdown Trigger -->
-        <a class='dropdown-trigger btn' href='#!' data-target='dropdown1'>All Categories<i class="fas fa-caret-down marginLeft10"></i></a>
+        <a class='dropdown-trigger btn' href='#!' data-target='dropdown1'>All Categories<i
+            class="fas fa-caret-down marginLeft10"></i></a>
 
         <!-- Dropdown Structure -->
         <ul id='dropdown1' class='dropdown-content'>
@@ -39,13 +40,13 @@
       </div>
     </div>
 
-  {{#each product}}
     <div class="gallery gallery-masonry row">
-      <div class="col s12 m4 gallery-item gallery-expand gallery-filter gallery-fillscreen" data-type="" data-section-type="product" data-tag="fillscreen">
+      {{#each product}}
+      <div class="col s12 m4 gallery-item gallery-expand gallery-filter gallery-fillscreen" data-type=""
+        data-section-type="product" data-tag="fillscreen">
         <div class="gallery-curve-wrapper">
           <a class="gallery-cover gray">
-            <img src="{{this.image}}" alt="{{this.name}}"
-              crossorigin="anonymous" data-product-featured-image="" />
+            <img src="{{this.image}}" alt="{{this.name}}" crossorigin="anonymous" data-product-featured-image="" />
           </a>
 
           <div class="gallery-header">
@@ -56,14 +57,15 @@
               </span>
             </div>
           </div>
-           
-           {{> actions/viewProduct}}
-        
+
+          {{> actions/viewProduct}}
+
         </div>
+        {{/each}}
 
       </div>
     </div>
-    {{/each}}
+  </div>
 </main>
 
 
