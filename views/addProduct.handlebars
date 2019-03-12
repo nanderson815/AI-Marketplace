@@ -10,13 +10,21 @@
 
         <div class="form-group">
           <label for="item">Product Image URL:</label>
-          <br>
           <input type='url' id="image" name='image' class="validate" required="" aria-required="true" />
+          <button id="addImage" type="submit" class="btn">Submit Image</button>
         </div>
+        <br>
 
         <div class="form-group">
           <label for="item">Product Name:</label>
           <input type="text" id="name" name="name" class="validate" required="" aria-required="true">
+        </div>
+
+        <div class="form-group">
+          <label for="item">Product Tags</label>
+          <div class="chips chips-autocomplete">
+            <input>
+          </div>
         </div>
 
         <div class="form-group">
