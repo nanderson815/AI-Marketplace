@@ -33,6 +33,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         classes: {
             type: DataTypes.STRING
+        },
+        category: {
+            type: DataTypes.STRING
         }
     });
 

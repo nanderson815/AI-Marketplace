@@ -59,7 +59,8 @@ function handleProductSubmit(event) {
       "userName": $("#username").val().trim(),
       "phone": $("#phone").val().trim(),
       "price": $("#price").val().trim(),
-      "classes": SavedTags
+      "classes": SavedTags,
+      "category": $("#category").val()
     };
 
     API.saveProduct(product).then(function () {

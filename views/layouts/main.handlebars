@@ -105,7 +105,7 @@
             var $shown_products = getPaginated($current_products, page_number, pagination_limit);
 
             // !!!!!!!!!!!!!! Remove pagination on <ul> items !!!!!!!!!!!!!!! //
-            // var $masonry = $('.gallery');
+            var $masonry = $('.gallery');
 
             $masonry.find('.gallery-item:nth-child(n +' + ($shown_products.length + 1) + ')').remove();
             renderPagination($('.gallery'));
