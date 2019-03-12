@@ -29,7 +29,7 @@
 }
 
 .popularCategories {
-    margin-top:20px;
+    margin-top:0px;
 }
 
 .marginLeft10 {
@@ -52,3 +52,21 @@
     margin-bottom:30px;
 }
 
+.btn-small a {
+    color:white !important;
+}
+
+.dropdown-content {
+    background-color:white;
+    color:#608a42;
+}
+
+.gallery {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-content: center !important;
+}
+
+.marginTop20 {
+    margin-top:20px;
+}

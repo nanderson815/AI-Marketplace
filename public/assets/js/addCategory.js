@@ -1,25 +1,33 @@
 // Materalize Dropdown
 $('.dropdown-trigger').dropdown();
 
-// // Select items from database based on category button select
-// $("#dropdown1 li").on("click",function(){
-//     console.log($(this).html());
+// $(document).ready(function(){
+//     $('.dropdown-trigger').dropdown();
 // })
 
-
 $("#dropdown1 li").on("click",function(){
-    console.log($(this).text());
-    var category = $(this).text();
-
-    var catObj = {
-        category: category
-    }
+    
+    var category = $(this).text().toLowerCase();
 
     $.ajax({
-        method: "GET",
-        url: '/api/categories',
-        data: catObj
+        method:"GET",
+        url: "categories/" + category
     }).then(function(catResponse){
         console.log(catResponse);
-    })
-})
+        window.location.href = `/addCategories/${category}`;
+    });
+
+});
+
+// $(document).on('click', '#dropdown2', function(){
+//     $.ajax({
+//         method:"GET",
+//         url:'categories'
+//     }).then(function(data){
+//         console.log("Categories = ", data);
+//     });
+//     $("#dropdown2").dropdown();
+// });
+
+
+

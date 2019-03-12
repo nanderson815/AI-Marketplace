@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#7db557">
-    <link rel="canonical" href="https://materialize-shopify-themes.myshopify.com/collections/fillscreen-style">
+    {{!-- <link rel="canonical" href="https://materialize-shopify-themes.myshopify.com/collections/fillscreen-style"> --}}
 
     <title>
         MarketPlace
@@ -103,7 +103,10 @@
             var page_max = Math.floor($current_products.length / pagination_limit) + 1;
             var page_number = getUrlParameter('page') || 1;
             var $shown_products = getPaginated($current_products, page_number, pagination_limit);
-            var $masonry = $('.gallery');
+
+            // !!!!!!!!!!!!!! Remove pagination on <ul> items !!!!!!!!!!!!!!! //
+            // var $masonry = $('.gallery');
+
             $masonry.find('.gallery-item:nth-child(n +' + ($shown_products.length + 1) + ')').remove();
             renderPagination($('.gallery'));
 
