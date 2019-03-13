@@ -1,5 +1,5 @@
 // Materalize Dropdown
-$('.dropdown-trigger').dropdown();
+$(".dropdown-trigger").dropdown();
 
 // $(document).ready(function(){
 //     $('.dropdown-trigger').dropdown();

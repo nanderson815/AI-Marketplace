@@ -46,6 +46,12 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/api/categories", function (req, res) {
+    db.Category.create(req.body).then(function(dbCategory){
+      res.json(dbCategory);
+    });
+  });
+
   // Delete an product by id
   app.delete("/api/products/:id", function (req, res) {
     db.Product.destroy({
