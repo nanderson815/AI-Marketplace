@@ -3,15 +3,22 @@
         <h3>{{this.name}}</h3>
     </div>
     <div class="checkout-column">
-        <img class="materialboxed" width="300"
-            src={{this.image}}>
-        <br>
+        <img class="materialboxed" width="300" src={{this.image}}>
 
-        <button class="btn-large z-depth-0 add-btn-product edit-product" type="submit" name="edit" data-id="{{this.id}}">
+        <div id='image-url-edit-{{this.id}}' class="row hidden-element">
+            <div class="input-field col s12">
+                <label class="active" for="first_name2">Image URL</label>
+                <input id="image-url-{{this.id}}" type="text" class="validate">
+            </div>
+        </div>
+
+        <button id="edit-{{this.id}}" class="btn-large z-depth-0 add-btn-product edit-product" type="submit" name="edit"
+            data-id="{{this.id}}">
             <span>Edit Product</span>
         </button>
 
-         <button class="btn-large z-depth-0 add-btn-product delete-product red darken-1" type="submit" name="delete" data-id="{{this.id}}">
+        <button id="delete-{{this.id}}" class="btn-large z-depth-0 add-btn-product delete-product red darken-1"
+            type="submit" name="delete" data-id="{{this.id}}">
             <span>Delete Product</span>
         </button>
 
@@ -21,7 +28,8 @@
         <div class="row">
             <div class="row">
                 <div class="col s12">
-                    <div class="card">
+
+                    <div id="description-display-{{this.id}}" class="card">
                         <div class="card-content">
                             <span class="card-title"><b>Product Description</b></span>
                             <p>{{this.description}}</p>
@@ -34,12 +42,59 @@
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div id="description-display-content-{{this.id}}" class="card">
                         <div class="card-content">
                             <span class="card-title"><b>${{this.price}}</b></span>
                         </div>
                     </div>
-                    
+
+                    <div id="description-edit-{{this.id}}" class="row hidden-element">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="prod-name-{{this.id}}" type="text" class="">
+                                    <label>Product Name</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="prod-description-{{this.id}}" class="materialize-textarea"></textarea>
+                                    <label for="product_description">Product Description</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="prod-password-{{this.id}}" type="password" class="validate">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="prod-email-{{this.id}}" type="email" class="validate">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">phone</i>
+                                    <input id="prod-telephone-{{this.id}}" type="tel" class="validate">
+                                    <label for="icon_telephone">Telephone</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">attach_money</i>
+                                    <input id="prod-price-{{this.id}}" type="tel" class="validate">
+                                    <label for="price">Product Price</label>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -3,6 +3,10 @@
     justify-content:center;
 }
 
+#MainContent {
+    min-height:80vh;
+}
+
 .categories {
     margin-top:20px;
 }
@@ -61,17 +65,20 @@
     color:#608a42;
 }
 
-.gallery {
+/* .gallery {
     display: flex;
     grid-template-columns: repeat(3, 1fr) !important;
     justify-content: center !important;
-}
+} */
 
 .marginTop20 {
     margin-top:20px;
 }
 
 .add-btn-product {
-    margin-bottom:10px;
+    margin-top: 20px;
+}
 
+.hidden-element {
+    display: none;
 }
