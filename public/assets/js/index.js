@@ -65,24 +65,34 @@ var handleProductSubmit = function (event) {
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the page
 var handleDeleteBtnClick = function () {
-  var getProductbyId = $(this).parent().attr("data-id");
-  API.getOneProduct(getProductbyId).then(function (data) {
+  var getProductbyId = $(this).attr("data-id");
+
+  $.ajax({
+    url: "api/products/" + getProductbyId,
+    type: "GET"
+  }).then(function (data) {
     var password = data.password;
     var EnteredPass = prompt("Please enter the listing password");
 
     if (EnteredPass === password) {
       API.deleteExample(getProductbyId).then(function () {
-        location.reload();
+        window.location.replace('/');
       });
     } else {
       alert("Incorrect. Please enter the password you used when creating this listing.");
     }
   });
 
-
 };
 
+var handleEditBtnClick = function () {
+  var getProductbyId = $(this).attr("data-id");
+  window.location.replace('/product/' + getProductbyId);
+};
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleProductSubmit);
-$productList.on("click", ".delete", handleDeleteBtnClick);
+$('.delete-product').on("click", handleDeleteBtnClick);
+
+$('.edit-product').on("click", handleEditBtnClick);
+
