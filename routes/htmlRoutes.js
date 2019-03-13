@@ -28,7 +28,7 @@ module.exports = function (app) {
   app.get("/addCategories/:category", function (req, res) {
     db.Product.findAll({
       where: {
-        name: req.params.category
+        category: req.params.category
       }
     }).then(function (dbProducts) {
       res.render("addCategories", {

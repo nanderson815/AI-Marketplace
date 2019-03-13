@@ -19,6 +19,15 @@ module.exports = function (app) {
     });
   });
 
+  app.get('/api/categorybuttons', function(req, res){
+    db.Product.findAll({
+      include: [db.Category]
+    }).then(function(dbProduct){
+      console.log(dbProduct);
+      res.json(dbProduct);
+    });
+  });
+
   // Get all Products
   app.get("/api/products", function (req, res) {
     db.Product.findAll({
