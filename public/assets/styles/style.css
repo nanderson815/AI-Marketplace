@@ -10,6 +10,10 @@
 .categories {
     margin-top:20px;
 }
+ 
+.categoriesTwo {
+    margin-top:20px;
+}
 
 .categories li {
     display:inline-block;
@@ -76,6 +80,7 @@
 }
 
 .add-btn-product {
+    margin-bottom:10px;
     margin-top: 20px;
 }
 

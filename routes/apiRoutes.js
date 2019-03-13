@@ -11,14 +11,6 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/api/recent/cat', function(req, res){
-    db.Product.findAll({
-      include: [db.Category]
-    }).then(function(dbProduct){
-      res.json(dbProduct);
-    });
-  });
-
   // Get all Products
   app.get("/api/products", function (req, res) {
     db.Product.findAll({
