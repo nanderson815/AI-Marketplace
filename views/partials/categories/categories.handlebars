@@ -2,12 +2,12 @@
 
 
 <!-- Dropdown Trigger -->
-<a class='dropdown-trigger btn marginTop20' href='#!' data-target='dropdown2'>All Categories<i
+<a class='dropdown-trigger btn marginTop20' href='#!' data-target='dropdown1'>All Categories<i
         class="fas fa-caret-down marginLeft10"></i></a>
 
 <!-- Dynamically Populate Dropdown -->
 <ul id='dropdown1' class='dropdown-content'>
-    {{#each product}}
+    {{#each categories}}
     <li class="btn btn-small" data-category="{{this.name}}"><a href="#!">{{this.name}}</a></li>
     {{/each}}
 </ul>

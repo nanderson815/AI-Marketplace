@@ -16,17 +16,32 @@
       <div class="col m12">
 
 
-        {{> categories/categories }}
-        
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn marginTop20' href='#!' data-target='dropdown1'>All Categories<i
+            class="fas fa-caret-down marginLeft10"></i></a>
+
+        <!-- Dynamically Populate Dropdown -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li class="btn btn-small" data-category="Sports"><a href="#!">Sports</a></li>
+          <li class="btn btn-small" data-category="Cars"><a href="#!">Cars</a></li>
+          <li class="btn btn-small" data-category="Leisure"><a href="#!">Leisure</a></li>
+          <li class="btn btn-small" data-category="Fashion"><a href="#!">Fashion</a></li>
+          <li class="btn btn-small" data-category="Education"><a href="#!">Education</a></li>
+          <li class="btn btn-small" data-category="Lifestyle"><a href="#!">Lifestyle</a></li>
+          <li class="btn btn-small" data-category="Home Goods"><a href="#!">Home Goods</a></li>
+        </ul>
+
         <!-- Popular Categories -->
         <div class="popularCategories borderBottomGray">
           <h6>Popular Categories</h6>
-          <ul class="categories">
-            <li class="btn btn-small"><a href="#">Gaming</a></li>
-            <li class="btn btn-small"><a href="#">Politics</a></li>
-            <li class="btn btn-small"><a href="#">Retail</a></li>
-            <li class="btn btn-small"><a href="#">Politics</a></li>
-            <li class="btn btn-small"><a href="#">Nature</a></li>
+          <ul class="categoriesTwo">
+            {{#each category}}
+            <li class="btn btn-small popular"><a href="#">{{this.name}}</a></li>
+            <li class="btn btn-small popular"><a href="#">{{this.name}}</a></li>
+            <li class="btn btn-small popular"><a href="#">{{this.name}}</a></li>
+            <li class="btn btn-small popular"><a href="#">{{this.name}}</a></li>
+            <li class="btn btn-small popular"><a href="#">{{this.name}}</a></li>
+            {{/each}}
           </ul>
         </div>
 
