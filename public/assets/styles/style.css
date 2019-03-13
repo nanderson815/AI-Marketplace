@@ -52,10 +52,6 @@
     margin-bottom:30px;
 }
 
-.gallery-curve-wrapper {
-    width: 200px;
-}
-
 .btn-small a {
     color:white !important;
 }
@@ -73,4 +69,9 @@
 
 .marginTop20 {
     margin-top:20px;
+}
+
+.add-btn-product {
+    margin-bottom:10px;
+
 }

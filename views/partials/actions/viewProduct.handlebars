@@ -1,15 +1,20 @@
 <div class="gallery-body">
     <div class="title-wrapper">
-        <h3>Coffee Table</h3>
+        <h3>{{this.name}}</h3>
     </div>
     <div class="checkout-column">
         <img class="materialboxed" width="300"
-            src="https://images.zgallerie.com/is/image/ZGallerie/hero/vincente-coffee-table-set-of-2-011601817.jpg">
+            src={{this.image}}>
         <br>
 
-        <button class="btn-large z-depth-0" type="submit" name="edit">
+        <button class="btn-large z-depth-0 add-btn-product edit-product" type="submit" name="edit" data-id="{{this.id}}">
             <span>Edit Product</span>
         </button>
+
+         <button class="btn-large z-depth-0 add-btn-product delete-product red darken-1" type="submit" name="delete" data-id="{{this.id}}">
+            <span>Delete Product</span>
+        </button>
+
     </div>
 
     <div class="description">
@@ -19,17 +24,22 @@
                     <div class="card">
                         <div class="card-content">
                             <span class="card-title"><b>Product Description</b></span>
-                            <p>This coffee table is round. It is very progressive. You can put coffee on it.
-                                You can also rest your legs on it. It is brand new never been used.
-                            </p>
+                            <p>{{this.description}}</p>
                         </div>
                         <div class="card-action">
                             <ul>
-                                <li>Phone number: 555-555-5555</li>
-                                <li>Email: asdf@asdf.com</li>
+                                <li>Phone number: {{this.phone}}</li>
+                                <li>Email: {{this.email}}</li>
                             </ul>
                         </div>
                     </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title"><b>${{this.price}}</b></span>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
