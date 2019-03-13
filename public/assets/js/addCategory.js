@@ -48,9 +48,32 @@ $(window).load(function(){
             list.append(item);
         }
 
+        var flag = true;
+        loadButtons(flag, data);
+
     });
 });
 
+// $(window).load(function(){
+//     loadButtons(flag, data) {
+//         if(flag === false){
+//             $.ajax({
+//                 method: "GET",
+//                 url: 'api/recent'
+//             }).then(function(data){
+//                 console.log(data);
+//                 var list = $(".categories");
+        
+//                 for(i = 0; i < 5; i++){
+//                     var item = "<li class='btn btn-small popular'><a href='#'>" + data[i].name + "</a></li>";
+//                     list.append(item);
+//                 }
+        
+//                 var flag = true;
+//             })
+//         }
+//     }
+// })
 
 
 
