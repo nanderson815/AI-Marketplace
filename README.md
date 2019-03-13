@@ -16,3 +16,11 @@ Your image will now be listed on the home page.
 1. Click the *Contact* button on the item listing.
 1. Contact the seller.
 
+
+#### To delete an item: 
+1. Navigate to the item that you listed.
+1. Select *Delete Item*.
+1. Enter the password you created when listing the item.
+
+The listing will now be deleted.
+
