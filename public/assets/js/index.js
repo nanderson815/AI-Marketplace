@@ -74,35 +74,45 @@ var handleProductSubmit = function (event) {
 
 $submitBtn.on("click", handleProductSubmit);
 
-$(document).on("click", '.edit-product', function(){
+$(document).on("click", '.edit-product', function () {
   var prodId = $(this).attr("data-id");
-  $('.edit-product', `[data-id="${prodId}"]` ).text("Save Product");
-  $('.edit-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product save-product');
-  $('.save-product', `[data-id="${prodId}"]`).attr('id', `save-${prodId}`);
 
-  $('.delete-product', `[data-id="${prodId}"]`).text("Go Back");
-  $('.delete-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product go-back red darken-1');
-  $('.go-back', `[data-id="${prodId}"]`).attr('id', `go-back-${prodId}`);
-
-  $(`#image-url-edit-${prodId}`)[0].style.display = "block";
-  
-  $(`#description-display-${prodId}`)[0].style.display = "none";
-  $(`#description-display-content-${prodId}`)[0].style.display = "none";
-  $(`#description-edit-${prodId}`)[0].style.display = "block";
-  
   API.getOneProduct(prodId).then(function (data) {
-    $(`#prod-name-${data.id}`).val(data.name)
-    $(`#prod-description-${data.id}`).val(data.description)
-    $(`#prod-password-${data.id}`).val(data.password)
-    $(`#prod-email-${data.id}`).val(data.email)
-    $(`#prod-telephone-${data.id}`).val(data.phone)
-    $(`#prod-price-${data.id}`).val(data.price)
-    $(`#image-url-${data.id}`).val(data.image);
-    Materialize.updateTextFields()
-    
-    productId = data.id
-    productUserName = data.userName
-  });  
+    var password = data.password;
+    var EnteredPass = prompt("Please enter the listing password");
+
+    if (EnteredPass === password) {
+      $('.edit-product', `[data-id="${prodId}"]`).text("Save Product");
+      $('.edit-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product save-product');
+      $('.save-product', `[data-id="${prodId}"]`).attr('id', `save-${prodId}`);
+
+      $('.delete-product', `[data-id="${prodId}"]`).text("Go Back");
+      $('.delete-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product go-back red darken-1');
+      $('.go-back', `[data-id="${prodId}"]`).attr('id', `go-back-${prodId}`);
+
+      $(`#image-url-edit-${prodId}`)[0].style.display = "block";
+
+      $(`#description-display-${prodId}`)[0].style.display = "none";
+      $(`#description-display-content-${prodId}`)[0].style.display = "none";
+      $(`#description-edit-${prodId}`)[0].style.display = "block";
+
+      API.getOneProduct(prodId).then(function (data) {
+        $(`#prod-name-${data.id}`).val(data.name)
+        $(`#prod-description-${data.id}`).val(data.description)
+        $(`#prod-password-${data.id}`).val(data.password)
+        $(`#prod-email-${data.id}`).val(data.email)
+        $(`#prod-telephone-${data.id}`).val(data.phone)
+        $(`#prod-price-${data.id}`).val(data.price)
+        $(`#image-url-${data.id}`).val(data.image);
+        Materialize.updateTextFields()
+
+        productId = data.id
+        productUserName = data.userName
+      });
+    } else {
+      alert("Incorrect. Please enter the password you used when creating this listing.");
+    }
+  });
 });
 
 var handleDeleteBtnClick = function () {
@@ -123,9 +133,9 @@ var handleDeleteBtnClick = function () {
 
 $(document).on("click", '.delete-product', handleDeleteBtnClick);
 
-$(document).on('click', '.go-back', function() {
+$(document).on('click', '.go-back', function () {
   var prodId = $(this).attr("data-id");
-  $('.save-product', `[data-id="${prodId}"]` ).text("Edit Product");
+  $('.save-product', `[data-id="${prodId}"]`).text("Edit Product");
   $('.save-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product edit-product');
   $('.edit-product', `[data-id="${prodId}"]`).attr('id', `edit-${prodId}`);
 
@@ -140,9 +150,9 @@ $(document).on('click', '.go-back', function() {
   $(`#description-edit-${prodId}`)[0].style.display = "none";
 })
 
-$(document).on('click', '.save-product', function() {
+$(document).on('click', '.save-product', function () {
   var prodId = $(this).attr("data-id");
-  
+
   var updateProductObj = {
     id: productId,
     name: $(`#prod-name-${prodId}`).val().trim(),
@@ -153,7 +163,7 @@ $(document).on('click', '.save-product', function() {
     price: $(`#prod-price-${prodId}`).val().trim(),
     image: $(`#image-url-${prodId}`).val().trim(),
     userName: productUserName
-  };  
+  };
 
   API.updateOneProduct(updateProductObj).then(function () {
     location.reload();
