@@ -9,3 +9,10 @@
 1. Fill out the rest of the form and click submit. 
 
 Your image will now be listed on the home page.
+
+
+#### To purchase an item:
+1. Find an item you like for sale.
+1. Click the *Contact* button on the item listing.
+1. Contact the seller.
+
