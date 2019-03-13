@@ -64,7 +64,7 @@ function handleProductSubmit(event) {
     };
 
     API.saveProduct(product).then(function () {
-      location.reload();
+      window.location.replace("/");
     });
 
     // Clear values
