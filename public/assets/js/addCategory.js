@@ -16,7 +16,6 @@ function catButtons() {
         method: "GET",
         url: 'api/recent'
     }).then(function (data) {
-        console.log("DATA = ", data);
         var list = $(".categories");
         var item;
         for (i = 0; i < data.length; i++) {
@@ -26,14 +25,6 @@ function catButtons() {
     });
 };
 
-// function catButtonSingle(category) {
-//     console.log($.unique(category));
-
-//     var list = $(".categoriesTwo");
-//     var item = "<li class='btn btn-small popular' data-category='" + category + "'><a href='#'>" + category + "</a></li>";
-//     list.append(item);
-
-// }
 
 function selectCategory() {
     // Set Variable Equal to Category
@@ -44,10 +35,7 @@ function selectCategory() {
         url: "addCategories/" + category
     }).then(function (catResponse) {
         console.log(catResponse);
-
         window.location.href = `/addCategories/${category}`;
     });
-
-    catButtonSingle(category);
 
 };
