@@ -19,29 +19,6 @@ $(".chips-autocomplete").chips({
 });
 
 
-var API = {
-  saveProduct: function (product) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/products",
-      data: JSON.stringify(product)
-    });
-  },
-  getWatson: function (url) {
-    console.log(url);
-    return $.ajax({
-      type: "GET",
-      url: "api/watson",
-      data: {
-        URL: url
-      }
-    });
-  }
-};
-
 function handleProductSubmit(event) {
   var SavedTags = event.data.toString();
   console.log(SavedTags);
@@ -63,7 +40,14 @@ function handleProductSubmit(event) {
       "category": $("#category").val()
     };
 
-    API.saveProduct(product).then(function () {
+    $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/products",
+      data: JSON.stringify(product)
+    }).then(function () {
       window.location.replace("/");
     });
 
@@ -91,7 +75,13 @@ var handleImageCats = function (event) {
   if (Imgurl) {
     event.preventDefault();
 
-    API.getWatson(Imgurl).then(function (data) {
+    $.ajax({
+      type: "GET",
+      url: "api/watson",
+      data: {
+        URL: Imgurl
+      }
+    }).then(function (data) {
       var classes = data.images[0].classifiers[0].classes;
       console.log(classes);
 
@@ -105,6 +95,4 @@ var handleImageCats = function (event) {
 
 $submitBtn.on("click", imageClasses, handleProductSubmit);
 $imgBtn.on("click", handleImageCats);
-
-
 
