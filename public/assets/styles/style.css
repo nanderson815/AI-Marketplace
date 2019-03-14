@@ -76,9 +76,17 @@
 } */
 
 .marginTop20 {
-    margin-top:20px;
+    margin-top:10px;
 }
 
 .add-btn-product {
     margin-bottom:10px;
+}
+
+.marginRight8 {
+    margin-right:8px;
+}
+
+h6 {
+    color:#737373;
 }

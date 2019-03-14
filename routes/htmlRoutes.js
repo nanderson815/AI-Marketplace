@@ -32,6 +32,7 @@ module.exports = function (app) {
       }
     }).then(function (dbProducts) {
       res.render("addCategories", {
+        cat: req.params.category,
         category: dbProducts
       });
     });

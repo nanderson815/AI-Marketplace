@@ -14,8 +14,7 @@
   <div class="container">
     <div class="row marginTop20">
       <div class="col m12">
-
-
+        <h6>Select Category:</h6>
         <!-- Dropdown Trigger -->
         <a class='dropdown-trigger btn marginTop20' href='#!' data-target='dropdown1'>All Categories<i
             class="fas fa-caret-down marginLeft10"></i></a>
@@ -33,37 +32,37 @@
 
         <!-- Popular Categories -->
         <div class="popularCategories borderBottomGray">
-          <h6>Current Category</h6>
+          <h6><i class="fas fa-map-marker-alt marginRight8" style="color:#737373"></i>Current Category</h6>
           <ul class="categoriesTwo">
-            {{#each category}}
-            <li class="btn btn-small popular"><a href="#">{{this.category}}</a></li>
-            {{/each}}
+
+            <li class="btn btn-small popularTwo"><a href="#">{{ cat }}</a></li>
+
           </ul>
         </div>
       </div>
-</div>
-      <div class="gallery gallery-masonry row">
-        {{#each category}}
-        <div class="col s12 m4 gallery-item gallery-expand gallery-filter gallery-fillscreen" data-type=""
-          data-section-type="product" data-tag="fillscreen">
-          <div class="gallery-curve-wrapper">
-            <a class="gallery-cover gray">
-              <img src="{{this.image}}" alt="{{this.name}}" crossorigin="anonymous" data-product-featured-image="" />
-            </a>
+    </div>
+    <div class="gallery gallery-masonry row">
+      {{#each category}}
+      <div class="col s12 m4 gallery-item gallery-expand gallery-filter gallery-fillscreen" data-type=""
+        data-section-type="product" data-tag="fillscreen">
+        <div class="gallery-curve-wrapper">
+          <a class="gallery-cover gray">
+            <img src="{{this.image}}" alt="{{this.name}}" crossorigin="anonymous" data-product-featured-image="" />
+          </a>
 
-            <div class="gallery-header">
-              <span class="title">{{this.name}}</span>
-              <div class="product-ratings-price">
-                <span class="price" data-product-price="">
-                  {{this.price}}
-                </span>
-              </div>
+          <div class="gallery-header">
+            <span class="title">{{this.name}}</span>
+            <div class="product-ratings-price">
+              <span class="price" data-product-price="">
+                {{this.price}}
+              </span>
             </div>
-            {{> actions/viewProduct this}}
           </div>
-          {{/each}}
+          {{> actions/viewProduct this}}
         </div>
+        {{/each}}
       </div>
+    </div>
 </main>
 
 
