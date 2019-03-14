@@ -20,6 +20,7 @@ function catButtons() {
         var list = $(".categories");
         for (i = 0; i < 5; i++) {
             var item = "<li class='btn btn-small popular' data-category='" + data[i].category + "'><a href='#'>" + data[i].category + "</a></li>";
+            
             list.append(item);
         };
     });
