@@ -26,14 +26,6 @@ function catButtons() {
     });
 };
 
-// function catButtonSingle(category) {
-//     console.log($.unique(category));
-
-//     var list = $(".categoriesTwo");
-//     var item = "<li class='btn btn-small popular' data-category='" + category + "'><a href='#'>" + category + "</a></li>";
-//     list.append(item);
-
-// }
 
 function selectCategory() {
     // Set Variable Equal to Category
@@ -47,7 +39,5 @@ function selectCategory() {
 
         window.location.href = `/addCategories/${category}`;
     });
-
-    catButtonSingle(category);
 
 };
