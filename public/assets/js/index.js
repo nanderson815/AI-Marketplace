@@ -49,30 +49,7 @@ var API = {
   }
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleProductSubmit = function (event) {
-  event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveProduct(example).then(function () {
-    location.reload();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-$submitBtn.on("click", handleProductSubmit);
 
 $(document).on("click", '.edit-product', function () {
   var prodId = $(this).attr("data-id");
