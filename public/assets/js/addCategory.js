@@ -1,4 +1,13 @@
 
+function clearFilter(){
+    $.ajax({
+        method: "GET",
+        url: "/"
+    }).then(function(data){
+        window.location.href = `/`;
+    });
+};
+
 function catButtons() {
     $.ajax({
         method: "GET",
@@ -28,5 +37,7 @@ function selectCategory() {
 $(".dropdown-trigger").dropdown();
 $("#dropdown1 li").on("click", selectCategory);
 $(document).on("click", ".popular", selectCategory);
+$(document).on("click", "#clearBtn", clearFilter);
+
 
 catButtons();
