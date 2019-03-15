@@ -9,7 +9,6 @@ $("#dropdown1 li").on("click", selectCategory);
 // Button Click Event To Return Items In Selected Category Only
 $(document).on("click", ".popular", selectCategory);
 
-$(".categories").load(catButtons());
 
 function catButtons() {
     $.ajax({
@@ -18,7 +17,7 @@ function catButtons() {
     }).then(function (data) {
         var list = $(".categories");
         var item;
-        for (i = 0; i < data.length; i++) {
+        for (i = 0; i < 5; i++) {
             item = "<li class='btn btn-small popular' data-category='" + data[i].category + "'><a href='#'>" + data[i].name + "</a></li>";
             list.append(item);
         };
@@ -37,5 +36,6 @@ function selectCategory() {
         console.log(catResponse);
         window.location.href = `/addCategories/${category}`;
     });
-
 };
+
+catButtons();
