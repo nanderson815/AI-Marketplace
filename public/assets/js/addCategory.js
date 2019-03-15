@@ -18,7 +18,7 @@ function catButtons() {
         var list = $(".categories");
         var item;
         for (i = 0; i < 5; i++) {
-            item = "<li class='btn btn-small popular' data-category='" + data[i].category + "'><a href='#'>" + data[i].name + "</a></li>";
+            item = "<li class='btn btn-small popular col m4 s6' data-category='" + data[i].category + "'><a href='#'>" + data[i].name + "</a></li>";
             list.append(item);
         };
     });
