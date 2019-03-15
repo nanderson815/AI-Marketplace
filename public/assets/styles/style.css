@@ -106,3 +106,12 @@ h6 {
 .footer-copyright {
     background-color:#75a951 !important;
 }
+
+#clearBtn {
+    float:right;
+}
+
+.brand-logo i {
+    display:flex;
+    align-items:center;
+}
