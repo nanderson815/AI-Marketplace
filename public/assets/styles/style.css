@@ -81,6 +81,11 @@
 
 .add-btn-product {
     margin-bottom:10px;
+    margin-top: 20px;
+}
+
+.hidden-element {
+    display: none;
 }
 
 .marginRight8 {
@@ -89,4 +94,8 @@
 
 h6 {
     color:#737373;
+}
+
+.footer-copyright {
+    background-color:#75a951 !important;
 }

@@ -35,20 +35,21 @@
           <h6><i class="fas fa-map-marker-alt marginRight8" style="color:#737373"></i>Current Category</h6>
           <ul class="categoriesTwo">
 
-            <li class="btn btn-small popularTwo"><a href="#">{{ cat }}</a></li>
+            <li class="btn btn-small popular"><a href="#">{{ cat }}</a></li>
 
           </ul>
         </div>
       </div>
-    </div>
-    <div class="gallery gallery-masonry row">
-      {{#each category}}
-      <div class="col s12 m4 gallery-item gallery-expand gallery-filter gallery-fillscreen" data-type=""
-        data-section-type="product" data-tag="fillscreen">
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray">
-            <img src="{{this.image}}" alt="{{this.name}}" crossorigin="anonymous" data-product-featured-image="" />
-          </a>
+
+</div>
+      <div class="gallery gallery-masonry row">
+        {{#each category}}
+        <div class="col s12 m4 gallery-item gallery-expand gallery-filter gallery-fillscreen" data-type=""
+          data-section-type="product" data-tag="fillscreen">
+          <div class="gallery-curve-wrapper">
+            <a class="gallery-cover gray">
+              <img src="{{this.image}}" alt="{{this.name}}" data-product-featured-image="" />
+            </a>
 
           <div class="gallery-header">
             <span class="title">{{this.name}}</span>

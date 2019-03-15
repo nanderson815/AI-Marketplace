@@ -4,6 +4,9 @@ var $exampleDescription = $("#description");
 var $submitBtn = $("#submit");
 var $productList = $("#example-list");
 
+var productUserName = "test";
+var productId;
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveProduct: function (example) {
@@ -14,6 +17,16 @@ var API = {
       type: "POST",
       url: "api/products",
       data: JSON.stringify(example)
+    });
+  },
+  updateOneProduct: function (productObject) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "PUT",
+      url: "api/products",
+      data: JSON.stringify(productObject)
     });
   },
   getExamples: function () {
@@ -36,41 +49,52 @@ var API = {
   }
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleProductSubmit = function (event) {
-  event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+$(document).on("click", '.edit-product', function () {
+  var prodId = $(this).attr("data-id");
 
-  API.saveProduct(example).then(function () {
-    location.reload();
+  API.getOneProduct(prodId).then(function (data) {
+    var password = data.password;
+    var EnteredPass = prompt("Please enter the listing password");
+
+    if (EnteredPass === password) {
+      $('.edit-product', `[data-id="${prodId}"]`).text("Save Product");
+      $('.edit-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product save-product');
+      $('.save-product', `[data-id="${prodId}"]`).attr('id', `save-${prodId}`);
+
+      $('.delete-product', `[data-id="${prodId}"]`).text("Go Back");
+      $('.delete-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product go-back red darken-1');
+      $('.go-back', `[data-id="${prodId}"]`).attr('id', `go-back-${prodId}`);
+
+      $(`#image-url-edit-${prodId}`)[0].style.display = "block";
+
+      $(`#description-display-${prodId}`)[0].style.display = "none";
+      $(`#description-display-content-${prodId}`)[0].style.display = "none";
+      $(`#description-edit-${prodId}`)[0].style.display = "block";
+
+      API.getOneProduct(prodId).then(function (data) {
+        $(`#prod-name-${data.id}`).val(data.name)
+        $(`#prod-description-${data.id}`).val(data.description)
+        $(`#prod-password-${data.id}`).val(data.password)
+        $(`#prod-email-${data.id}`).val(data.email)
+        $(`#prod-telephone-${data.id}`).val(data.phone)
+        $(`#prod-price-${data.id}`).val(data.price)
+        $(`#image-url-${data.id}`).val(data.image);
+        Materialize.updateTextFields()
+
+        productId = data.id
+        productUserName = data.userName
+      });
+    } else {
+      alert("Incorrect. Please enter the password you used when creating this listing.");
+    }
   });
+});
 
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-
-
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the page
 var handleDeleteBtnClick = function () {
   var getProductbyId = $(this).attr("data-id");
-
-  $.ajax({
-    url: "api/products/" + getProductbyId,
-    type: "GET"
-  }).then(function (data) {
+  API.getOneProduct(getProductbyId).then(function (data) {
     var password = data.password;
     var EnteredPass = prompt("Please enter the listing password");
 
@@ -82,17 +106,43 @@ var handleDeleteBtnClick = function () {
       alert("Incorrect. Please enter the password you used when creating this listing.");
     }
   });
-
 };
 
-var handleEditBtnClick = function () {
-  var getProductbyId = $(this).attr("data-id");
-  window.location.replace('/product/' + getProductbyId);
-};
+$(document).on("click", '.delete-product', handleDeleteBtnClick);
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleProductSubmit);
-$('.delete-product').on("click", handleDeleteBtnClick);
+$(document).on('click', '.go-back', function () {
+  var prodId = $(this).attr("data-id");
+  $('.save-product', `[data-id="${prodId}"]`).text("Edit Product");
+  $('.save-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product edit-product');
+  $('.edit-product', `[data-id="${prodId}"]`).attr('id', `edit-${prodId}`);
 
-$('.edit-product').on("click", handleEditBtnClick);
+  $('.go-back', `[data-id="${prodId}"]`).text("Delete Product");
+  $('.go-back', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product delete-product red darken-1');
+  $('.delete-product', `[data-id="${prodId}"]`).attr('id', `delete-${prodId}`);
 
+  $(`#image-url-edit-${prodId}`)[0].style.display = "none"
+
+  $(`#description-display-${prodId}`)[0].style.display = "block";
+  $(`#description-display-content-${prodId}`)[0].style.display = "block";
+  $(`#description-edit-${prodId}`)[0].style.display = "none";
+})
+
+$(document).on('click', '.save-product', function () {
+  var prodId = $(this).attr("data-id");
+
+  var updateProductObj = {
+    id: productId,
+    name: $(`#prod-name-${prodId}`).val().trim(),
+    description: $(`#prod-description-${prodId}`).val().trim(),
+    password: $(`#prod-password-${prodId}`).val().trim(),
+    email: $(`#prod-email-${prodId}`).val().trim(),
+    phone: $(`#prod-telephone-${prodId}`).val().trim(),
+    price: $(`#prod-price-${prodId}`).val().trim(),
+    image: $(`#image-url-${prodId}`).val().trim(),
+    userName: productUserName
+  };
+
+  API.updateOneProduct(updateProductObj).then(function () {
+    location.reload();
+  });
+});
