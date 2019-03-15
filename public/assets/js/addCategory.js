@@ -1,14 +1,3 @@
-// var flag = true;
-
-// Materalize Dropdown
-$(".dropdown-trigger").dropdown();
-
-// Dropdown Click Event To Return Items In Selected Category Only
-$("#dropdown1 li").on("click", selectCategory);
-
-// Button Click Event To Return Items In Selected Category Only
-$(document).on("click", ".popular", selectCategory);
-
 
 function catButtons() {
     $.ajax({
@@ -18,12 +7,11 @@ function catButtons() {
         var list = $(".categories");
         var item;
         for (i = 0; i < 5; i++) {
-            item = "<li class='btn btn-small popular col m4 s6' data-category='" + data[i].category + "'><a href='#'>" + data[i].name + "</a></li>";
+            item = "<li class='btn btn-small popular' data-category='" + data[i].category + "'><a href='#'>" + data[i].name + "</a></li>";
             list.append(item);
         };
     });
 };
-
 
 function selectCategory() {
     // Set Variable Equal to Category
@@ -33,9 +21,12 @@ function selectCategory() {
         method: "GET",
         url: "addCategories/" + category
     }).then(function (catResponse) {
-        console.log(catResponse);
         window.location.href = `/addCategories/${category}`;
     });
 };
+
+$(".dropdown-trigger").dropdown();
+$("#dropdown1 li").on("click", selectCategory);
+$(document).on("click", ".popular", selectCategory);
 
 catButtons();
