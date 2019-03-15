@@ -71,6 +71,8 @@ $(document).on("click", '.edit-product', function () {
 
       $(`#description-display-${prodId}`)[0].style.display = "none";
       $(`#description-display-content-${prodId}`)[0].style.display = "none";
+      $(`#chip-display-${prodId}`)[0].style.display = "none";
+
       $(`#description-edit-${prodId}`)[0].style.display = "block";
 
       API.getOneProduct(prodId).then(function (data) {
@@ -122,6 +124,7 @@ $(document).on('click', '.go-back', function () {
 
   $(`#image-url-edit-${prodId}`)[0].style.display = "none"
 
+  $(`#chip-display-${prodId}`)[0].style.display = "block";
   $(`#description-display-${prodId}`)[0].style.display = "block";
   $(`#description-display-content-${prodId}`)[0].style.display = "block";
   $(`#description-edit-${prodId}`)[0].style.display = "none";
@@ -144,5 +147,18 @@ $(document).on('click', '.save-product', function () {
 
   API.updateOneProduct(updateProductObj).then(function () {
     location.reload();
+  });
+});
+
+$(document).ready(function() {
+  var chips = classes.split(",");
+  var id = `chip-${chipId}`
+
+  chips.forEach(chip => {
+    var ele = $('<div>');
+    ele.attr('class', 'chip');
+    ele.text(chip);
+
+    $(`#${id}`).append(ele)        
   });
 });
