@@ -21,7 +21,6 @@ $(".chips-autocomplete").chips({
 
 function handleProductSubmit(event) {
   var SavedTags = event.data.toString();
-  console.log(SavedTags);
   var form = $("#productForm")[0];
   if (form.checkValidity()) {
     event.preventDefault();
@@ -83,7 +82,6 @@ var handleImageCats = function (event) {
       }
     }).then(function (data) {
       var classes = data.images[0].classifiers[0].classes;
-      console.log(classes);
 
       $("#name").val(classes[0].class);
       createChips(classes);
