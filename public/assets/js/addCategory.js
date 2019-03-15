@@ -1,7 +1,3 @@
-$(".dropdown-trigger").dropdown();
-$("#dropdown1 li").on("click", selectCategory);
-$(document).on("click", ".popular", selectCategory);
-
 
 function catButtons() {
     $.ajax({
@@ -29,5 +25,8 @@ function selectCategory() {
     });
 };
 
+$(".dropdown-trigger").dropdown();
+$("#dropdown1 li").on("click", selectCategory);
+$(document).on("click", ".popular", selectCategory);
 
 catButtons();
