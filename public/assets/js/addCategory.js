@@ -1,5 +1,4 @@
 
-
 function catButtons() {
     $.ajax({
         method: "GET",

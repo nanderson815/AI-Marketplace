@@ -17,19 +17,26 @@
 
 .categories li {
     display:inline-block;
+    width:auto !important;
+    margin-right:5px;
+    margin-bottom:5px;
 }
 
 .categories li a {
     color:white;
 }
 
-.categories li:not(:first-of-type){
+/* .categories li:not(:first-of-type){
     margin-left:20px;
-}
+} */
 
 .borderBottomGray {
     border-bottom:1px solid #d9d9d9;
-    padding:20px 0px 20px 0px;
+    padding:0px 0px 20px 0px;
+}
+
+.paddingTop20 {
+    padding-top:20px;
 }
 
 #dropdown1 li a{
@@ -37,7 +44,7 @@
 }
 
 .popularCategories {
-    margin-top:0px;
+    margin-top:auto;
 }
 
 .marginLeft10 {
