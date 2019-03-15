@@ -88,7 +88,6 @@ module.exports = function (app) {
       if (err) {
         console.log(err);
       } else {
-        console.log(JSON.stringify(response, null, 2));
         res.json(response);
       }
     });
