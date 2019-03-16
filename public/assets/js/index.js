@@ -64,7 +64,7 @@ $(document).on("click", '.edit-product', function () {
       $('.save-product', `[data-id="${prodId}"]`).attr('id', `save-${prodId}`);
 
       $('.delete-product', `[data-id="${prodId}"]`).text("Go Back");
-      $('.delete-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product go-back red darken-1');
+      $('.delete-product', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product go-back second-button');
       $('.go-back', `[data-id="${prodId}"]`).attr('id', `go-back-${prodId}`);
 
       $(`#image-url-edit-${prodId}`)[0].style.display = "block";
@@ -119,7 +119,7 @@ $(document).on('click', '.go-back', function () {
   $('.edit-product', `[data-id="${prodId}"]`).attr('id', `edit-${prodId}`);
 
   $('.go-back', `[data-id="${prodId}"]`).text("Delete Product");
-  $('.go-back', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product delete-product red darken-1');
+  $('.go-back', `[data-id="${prodId}"]`).attr('class', 'btn-large z-depth-0 add-btn-product delete-product second-button');
   $('.delete-product', `[data-id="${prodId}"]`).attr('id', `delete-${prodId}`);
 
   $(`#image-url-edit-${prodId}`)[0].style.display = "none"
